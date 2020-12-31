@@ -1,0 +1,9 @@
+userOne:
+  name: James
+  username: TestUser1
+  id: 1
+
+userTwo:
+  name: Kylie
+  username: TestUser2
+  id: 2

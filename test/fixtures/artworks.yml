@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Test ArtWork One
+  image_url: https://www.abc.net.au/cm/rimage/11828024-3x2-xlarge.jpg?v=2 
+  curator_id: 1
+
+two:
+  title: Test ArtWork One
+  image_url: https://cdn3.vectorstock.com/i/1000x1000/98/62/polygon-3d-objects-set-icons-vector-20839862.jpg
+  curator_id: 2
