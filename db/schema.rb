@@ -16,11 +16,14 @@ ActiveRecord::Schema.define(version: 2020_12_31_063308) do
   enable_extension "plpgsql"
 
   create_table "artworks", force: :cascade do |t|
-    t.string "title"
-    t.string "image_url"
-    t.string "curator_id"
+    t.string "title", null: false
+    t.string "image_url", null: false
+    t.string "curator_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["curator_id"], name: "index_artworks_on_curator_id"
+    t.index ["image_url"], name: "index_artworks_on_image_url", unique: true
+    t.index ["title", "curator_id"], name: "index_artworks_on_title_and_curator_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

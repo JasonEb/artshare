@@ -8,6 +8,8 @@ class CreateArtworks < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_index :artworks, 
+    add_index :artworks, :curator_id
+    add_index :artworks, :image_url, unique: true
+    add_index :artworks, [:title, :curator_id], unique: true
   end
 end
