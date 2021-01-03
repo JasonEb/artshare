@@ -3,14 +3,12 @@ require 'rails_helper'
 RSpec.describe Artwork, type: :model do
   let (:artwork) { FactoryBot.build(:artwork )}
 
-  it 'validates the presence of title, image_url, and curator_id' do
-    expect(:artwork).not_to be_valid
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:image_url) }
+  it { should validate_presence_of(:curator_id) }
 
-    artwork.title = "test title"
-    expect(:artwork).not_to be_valid
-    artwork.image_url = "www.localhost.com/example.jpeg"
-    expect(:artwork).not_to be_valid
-    artwork.curator_id = 0
-    expect(:artwork).to be_valid
-  end
+  it { should validate_uniqueness_of(:image_url)}
+  it { should validate_uniqueness_of(:curator_id)}
+
+  it { should have_one(:curator) }
 end
